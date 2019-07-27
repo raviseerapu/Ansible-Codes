@@ -1,0 +1,8 @@
+--- #update the syste
+- hosts: local
+  user: test
+  sudo: yes
+  connection: ssh
+  tasks: 
+    - name: Installation of yum updates
+      command: yum update -y

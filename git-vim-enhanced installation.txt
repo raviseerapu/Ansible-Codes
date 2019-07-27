@@ -1,0 +1,7 @@
+- hosts: local
+  user: test
+  sudo: yes
+  connection: ssh
+  tasks:
+    - name: Installation of git, vim-enhance
+      command: yum install git vim-enhanced -y

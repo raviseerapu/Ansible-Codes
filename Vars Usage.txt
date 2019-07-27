@@ -1,0 +1,6 @@
+- hosts: localhost
+  vars:
+    controle_server: sbhshph1a.mylabserver.com
+  tasks:
+  - name: install nginx in this
+    yum: pkg=nginx state=installed update_cache=true

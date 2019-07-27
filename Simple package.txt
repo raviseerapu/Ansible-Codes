@@ -1,0 +1,4 @@
+- hosts: local
+  tasks: 
+  - name: Install Lunx app on thi server
+    yum: pkg=lynx state=installed update_cache=true

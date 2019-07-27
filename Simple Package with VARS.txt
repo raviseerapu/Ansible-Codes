@@ -1,0 +1,21 @@
+--- #my first yaml playbook using ansible
+- hosts: db
+  user: test
+  sudo: yes
+  connection: ssh
+  gather_facts: no
+  vars:
+    playbook_version: 0.1b
+  vars_files:
+    - config/copyright.yml
+    - config/webdefaults.yml
+  vars_prompt:
+    - name: Web_Domain
+      prompt: Web Domain
+  tasks:
+    - name: Install httpd web server
+      action: "yum name=httpd state=installed"
+      notify: "Restart HTTPD"
+  handler:
+    - name: Restart HTTPD
+      action: "service name=httpd state=restart"
